@@ -6,12 +6,13 @@ WHERE o."inDelivery" = 't'
 GROUP BY c.login;
 
 
-
+Исправлены значения полей finished, cancelled, inDelivery
+  
 SELECT track,
                CASE 
-                        WHEN finished = 't' THEN '2'
-                        WHEN cancelled = 't' THEN '-1'
-                        WHEN "inDelivery" = 't' THEN '1' 
+                        WHEN finished = 'true' THEN '2'
+                        WHEN cancelled = 'true' THEN '-1'
+                        WHEN "inDelivery" = 'true' THEN '1' 
                         ELSE '0' 
                 END                                
 FROM "Orders";
